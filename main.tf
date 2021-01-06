@@ -19,5 +19,5 @@ module "eks-jx" {
 module "iam_authenticator_config" {
     source                = "git::https://github.com/cloudposse/terraform-aws-kops-iam-authenticator-config.git?ref=master"
     cluster_id            = "tf-jx-${var.cluster_name}"
-    kube_config_path =    "/.kubeconfig_tf-jx-${var.cluster_name}"
+    kube_config_path =    "./kubeconfig_tf-jx-${var.cluster_name}"
   }

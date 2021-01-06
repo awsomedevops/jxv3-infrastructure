@@ -4,12 +4,13 @@
 variable "region" {
   description = "AWS region code for creating resources."
   type = string
+  default     = "us-east-1"
 }
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
-  default     = "1.17"
+  default     = "1.18"
 }
 
 variable "vault_user" {
@@ -21,7 +22,7 @@ variable "vault_user" {
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = ""
+  default     = "tf-jx-rajini-kanth"
 }
 
 variable "force_destroy" {
@@ -39,14 +40,43 @@ variable "is_jx2" {
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
   type        = string
+  default     = "https://github.com/awsomedevops/jxv3-cluster.git"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
+  default     = "jx-bot-user"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
+}
+variable "enable_logs_storage" {
+  description = "Flag to enable or disable long term storage for logs"
+  type        = bool
+  default     = false
+}
+
+variable "enable_reports_storage" {
+  description = "Flag to enable or disable long term storage for reports"
+  type        = bool
+  default     = false
+}
+
+variable "enable_repository_storage" {
+  description = "Flag to enable or disable the repository bucket storage"
+  type        = bool
+  default     = false
+}
+variable "use_vault" {
+  description = "Flag to control vault resource creation"
+  type        = bool
+  default     = false
+}
+variable "install_kuberhealthy" {
+  description = "Flag to specify if kuberhealthy operator should be installed"
+  type        = bool
+  default     = false
 }

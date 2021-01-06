@@ -10,7 +10,7 @@ variable "region" {
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
-  default     = "1.18"
+  default     = "1.17"
 }
 
 variable "vault_user" {
@@ -22,7 +22,7 @@ variable "vault_user" {
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = "tf-jx-rajini-kanth"
+  default     = "tf-jx-awesome-devops"
 }
 
 variable "force_destroy" {
